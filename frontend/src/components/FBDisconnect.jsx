@@ -8,8 +8,8 @@ function FBDisconnect() {
 
   const handleDisconnect = () => {
     disconnect();
-    // Redirect to the login page after disconnecting
-    navigate("/login"); // Replace '/login' with your actual login route
+    // Redirect to the connect page after disconnecting
+    navigate("/connect-facebook"); 
   };
 
   return (
