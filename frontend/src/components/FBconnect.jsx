@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { useFacebook } from "../context/FacebookContext";
-import { Navigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 
 function FBConnect() {
   const { facebookToken, setToken } = useFacebook();
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-
+  const navigate = useNavigate()
 
   const checkLoginStatus = () => {
     window.FB.getLoginStatus((response) => {
@@ -38,16 +38,18 @@ function FBConnect() {
   }, []);
 
   const handleLogin = () => {
-    window.FB.login((response) => {
-      if (response.authResponse) {
-        setIsLoggedIn(true);
-        setToken(response.authResponse.accessToken);
-      } else {
-        console.error("Facebook login failed");
-      }
-    }, {scope: 'public_profile, email, pages_messaging, pages_show_list'});
+    window.FB.login(
+      (response) => {
+        if (response.authResponse) {
+          setIsLoggedIn(true);
+          setToken(response.authResponse.accessToken);
+        } else {
+          console.error("Facebook login failed");
+        }
+      },
+      { scope: "public_profile" }
+    );
   };
-
 
   return (
     <div>
@@ -55,11 +57,26 @@ function FBConnect() {
         // <p>You are logged in with Facebook</p>
         <Navigate to="/home"></Navigate>
       ) : (
-        <div className="bg-white p-10 rounded text-3xl font-bold">
-          <p className="text-black mb-8"> Facebook Page integration</p>
-          <button onClick={handleLogin} className="bg-blue-700 text-white">
-            Connect Facebook
-          </button>
+        <div className="bg-[#1E4F90] h-screen flex justify-center">
+          <div className="flex flex-col justify-center">
+            <div className="bg-white w-80 text-center p-8 h-max px-4 rounded-2xl">
+              <h3 className="text-xl font-bold mb-4">
+                Facebook Page Integration
+              </h3>
+              <button
+                onClick={handleLogin}
+                className="bg-blue-600 text-white px-6 py-3 rounded-lg mb-4"
+              >
+                Connect Facebook
+              </button>
+              <button
+                onClick={() => {navigate('/home')}}
+                className="bg-blue-800 text-white px-6 py-3 rounded-lg"
+              >
+                Login without FB - DEMO
+              </button>
+            </div>
+          </div>
         </div>
       )}
     </div>
