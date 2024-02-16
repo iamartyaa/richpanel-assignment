@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 export const Register = () => {
   const [userName, setUserName] = useState("");
   const [email, setEmail] = useState("");
+  const [error, setError] = useState("");
   const [password, setPassword] = useState("");
   const [label, setLabel] = useState("Register");
   const [rememberMe, setRememberMe] = useState(false);
@@ -14,12 +15,23 @@ export const Register = () => {
   const handleRegister = async (e) => {
     e.preventDefault();
     setLabel("Registering...");
-    const response = await axios.post(`http://localhost:3000/register`, {
-      email,
-      password,
-    });
-    localStorage.setItem("token", response.data.token);
-    navigate("/connect-facebook");
+    try {
+      const response = await axios.post(`http://localhost:3000/register`, {
+        userName,
+        email,
+        password,
+      });
+
+      localStorage.setItem("token", response.data.token);
+    } catch (e) {
+      console.log(e.response.data.error);
+      setLabel("Register");
+
+      setError(e.response.data.error);
+      return;
+    }
+
+    navigate("/login");
   };
 
   const dummyRegister = async (e) => {
@@ -32,6 +44,8 @@ export const Register = () => {
     <div className="bg-[#1E4D91] h-screen flex justify-center">
       <div className="flex flex-col justify-center">
         <form className="bg-white w-96 p-2 h-max px-4 rounded-2xl">
+          {error && <p className="text-red-700">{error}</p>}
+
           <h1 className="text-lg text-center font-semibold m-7">
             Register your Account
           </h1>
@@ -120,10 +134,17 @@ export const Register = () => {
 
           <div className="mt-3">
             <p>
-              Already have an account, <span className="text-blue-600 underline cursor-pointer" onClick={() => {navigate('/login')}}>Login here</span>
+              Already have an account,{" "}
+              <span
+                className="text-blue-600 underline cursor-pointer"
+                onClick={() => {
+                  navigate("/login");
+                }}
+              >
+                Login here
+              </span>
             </p>
           </div>
-
         </form>
       </div>
     </div>

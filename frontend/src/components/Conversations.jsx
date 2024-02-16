@@ -62,7 +62,7 @@ export const Conversations = () => {
           id="msginput"
         />
         <FontAwesomeIcon
-          className="m-2 fa-xl text-blue-700"
+          className="m-2 fa-xl text-blue-700 cursor-pointer"
           icon={faPaperPlane}
         />
       </div>

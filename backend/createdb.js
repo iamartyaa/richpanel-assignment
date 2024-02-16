@@ -18,4 +18,4 @@ async function createDatabase(databaseName) {
   }
 }
 
-createDatabase("spam_directory");
+createDatabase("richpanel");

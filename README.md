@@ -12,4 +12,6 @@ Postgres
 
 ![GitHub Logo](./screenshots/fblogin.png)
 
-![login](screenshots/managepage.png)
+![connect-facebook](screenshots/managepage.png)
+![login](screenshots/login.png)
+![register](screenshots/register.png)

@@ -8,7 +8,7 @@ module.exports = {
   development: {
     client: 'postgresql',
     connection: {
-      database: 'spam_directory',
+      database: 'richpanel',
       user:     'postgres',
       password: '1234'
     },

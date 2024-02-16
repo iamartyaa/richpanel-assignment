@@ -20,11 +20,11 @@ export const Sidebar = () => {
       </div>
       <div className="flex flex-col flex-1 items-center justify-between">
         <div className="my-4 flex flex-col items-center justify-center">
-          <FontAwesomeIcon className="mb-8 fa-2xl" icon={faInbox} />
+          <FontAwesomeIcon className="mb-8 fa-2xl cursor-pointer" icon={faInbox} />
           {/* <div className=" border-solid border-2 border-red-700 h-12 w-full   bg-white text-black">
           </div> */}
-          <FontAwesomeIcon className="mb-8 fa-2xl" icon={faPeopleGroup} />
-          <FontAwesomeIcon className="mb-8 fa-2xl" icon={faArrowUpRightDots} />
+          <FontAwesomeIcon className="mb-8 fa-2xl cursor-pointer" icon={faPeopleGroup} />
+          <FontAwesomeIcon className="mb-8 fa-2xl cursor-pointer" icon={faArrowUpRightDots} />
         </div>
       </div>
       <div className="flex items-center p-4 cursor-pointer">

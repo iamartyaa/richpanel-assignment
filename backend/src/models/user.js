@@ -18,11 +18,10 @@ class User extends Model {
   static get jsonSchema() {
     return {
       type: 'object',
-      required: ['Name', 'PhoneNumber', 'Password'],
+      required: ['Name', 'EmailAddress', 'Password'],
       properties: {
         UserID: { type: 'string', format: 'uuid' },
         Name: { type: 'string', minLength: 1, maxLength: 255 },
-        PhoneNumber: { type: 'string', minLength: 1, maxLength: 15},
         EmailAddress: { type: 'string', maxLength: 255 },
         Password: { type: 'string', minLength: 1, maxLength: 255 },
       },
