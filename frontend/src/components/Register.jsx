@@ -57,7 +57,7 @@ export const Register = () => {
             <input
               type="text"
               id="name"
-              placeholder="John Doe"
+              placeholder="Dummy User"
               onChange={(e) => {
                 setUserName(e.target.value);
               }}
@@ -72,7 +72,7 @@ export const Register = () => {
             <input
               type="email"
               id="email"
-              placeholder="test@gmail.com"
+              placeholder="dummy@user.com"
               onChange={(e) => {
                 setEmail(e.target.value);
               }}

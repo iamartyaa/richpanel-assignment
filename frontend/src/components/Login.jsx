@@ -53,7 +53,7 @@ export const Login = () => {
             <input
               type="email"
               id="email"
-              placeholder="test@gmail.com"
+              placeholder="dummy@user.com"
               onChange={(e) => {
                 setEmail(e.target.value);
               }}

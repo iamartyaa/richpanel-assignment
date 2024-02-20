@@ -73,7 +73,7 @@ function FBConnect() {
                 onClick={() => {navigate('/home')}}
                 className="bg-blue-800 text-white px-6 py-3 rounded-lg"
               >
-                Login without FB - DEMO
+                Login without FB - TRIAL
               </button>
             </div>
           </div>

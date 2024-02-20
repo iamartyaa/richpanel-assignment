@@ -20,7 +20,7 @@ export const RightSidebar = () => {
           className="m-2 fa-2xl text-blue-700 border-2 p-6 rounded-full bg-gray-300"
           icon={faUser}
         />
-        <p>Bruce Banner</p>
+        <p>Dummy User</p>
         <p>online</p>
         <div className="flex mt-6">
           <button className="border-2 mr-8 px-4 py-1 rounded">
@@ -40,15 +40,15 @@ export const RightSidebar = () => {
           <div className="p-2 flex flex-col">
             <div className="flex justify-between mb-3">
               <p className="text-gray-500">Email</p>
-              <p>brucebanner@marvel.com</p>
+              <p>dummy@user.com</p>
             </div>
             <div className="flex justify-between mb-3">
               <p className="text-gray-500">First Name</p>
-              <p>Bruce</p>
+              <p>Dummy</p>
             </div>
             <div className="flex justify-between mb-3">
               <p className="text-gray-500">Last Name</p>
-              <p>Banner</p>
+              <p>User</p>
             </div>
           </div>
           <p className="p-2 cursor-pointer text-blue-700">View more details</p>
